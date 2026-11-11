@@ -1,6 +1,6 @@
 # Bytecoin Explorer
 
-A block explorer for Bytecoin (BCN) that is just three static files. The browser reads everything straight from a `bytecoind` node over its JSON-RPC API, so there is no database, no indexer and no server code to run.
+A block explorer for Bytecoin (BCN) that is just three static files (plus its icons). The browser reads everything straight from a `bytecoind` node over its JSON-RPC API, so there is no database, no indexer and no server code to run.
 
 Live: <https://explorer.bytecoin.community>, served from the community node <https://node.bytecoin.community>.
 
@@ -22,6 +22,7 @@ There is no address search and there are no address balances. Bytecoin hides sen
 | `index.html` | The page, with a strict Content-Security-Policy |
 | `app.js` | Routing (`#/block/…`, `#/tx/…`, `#/mempool`, `#/proof`) and the RPC calls |
 | `style.css` | Styles, light and dark |
+| `logo-192.png`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | Explorer logo and icons, based on the Bytecoin mark |
 | `deploy/` | The nginx configs we use for the explorer and for the public node |
 
 The node methods used are `get_status`, `get_block_header`, `get_raw_block`, `get_raw_transaction`, `sync_mem_pool` and `check_sendproof`. Some numbers in the node's answers (coins generated, cumulative difficulty) do not fit in a JavaScript number. `app.js` keeps them as strings and uses `BigInt` for amounts.
