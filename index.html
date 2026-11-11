@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://node.bytecoin.community; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Bytecoin (BCN) block explorer: blocks, transactions, mempool and payment proof checks, served from a community node.">
+<title>Bytecoin Explorer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101b28'/%3E%3Cpath d='M9 16 16 9l7 7-7 7z' fill='none' stroke='%23ff6a55' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#/"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d2f43"/><path d="M9 16 16 9l7 7-7 7z" fill="none" stroke="#ff6a55" stroke-width="2.4"/></svg><span>Bytecoin Explorer</span></a>
+    <nav>
+      <a href="#/">Blocks</a>
+      <a href="#/mempool">Mempool</a>
+      <a href="#/proof">Check a payment</a>
+      <a href="https://bytecoin.community">bytecoin.community</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <form id="search" class="search" role="search">
+      <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="Search" placeholder="Block height, block hash or transaction hash">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main class="wrap" id="view" aria-live="polite"></main>
+
+<footer class="wrap foot">
+  <p>Data comes straight from our own node, <a href="https://node.bytecoin.community">node.bytecoin.community</a>. No cookies, no tracking.</p>
+  <p>There is no address search on purpose: Bytecoin hides senders, receivers and balances, so no explorer can show them.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
